@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mnc-securities>
+ <topvalue>
+  <time>17 Oct 2023, 14:51</time>
+ </topvalue>
+ <content>
+  <code>BREN</code>
+  <last>3,280</last>
+  <close>2,750</close>
+  <change>530.00</change>
+  <pchange>19.27</pchange>
+  <freq>58,659</freq>
+  <volume>166.27 M</volume>
+  <value>509.89 B</value>
+ </content>
+ <content>
+  <code>BBRI</code>
+  <last>5,200</last>
+  <close>5,250</close>
+  <change>-50.00</change>
+  <pchange>-0.95</pchange>
+  <freq>18,391</freq>
+  <volume>90.86 M</volume>
+  <value>471.79 B</value>
+ </content>
+ <content>
+  <code>AMMN</code>
+  <last>6,250</last>
+  <close>6,150</close>
+  <change>100.00</change>
+  <pchange>1.63</pchange>
+  <freq>8,731</freq>
+  <volume>55.94 M</volume>
+  <value>344.35 B</value>
+ </content>
+ <content>
+  <code>BBCA</code>
+  <last>9,000</last>
+  <close>9,100</close>
+  <change>-100.00</change>
+  <pchange>-1.10</pchange>
+  <freq>11,663</freq>
+  <volume>35.43 M</volume>
+  <value>319.58 B</value>
+ </content>
+ <content>
+  <code>BMRI</code>
+  <last>5,975</last>
+  <close>6,025</close>
+  <change>-50.00</change>
+  <pchange>-0.83</pchange>
+  <freq>10,232</freq>
+  <volume>52.25 M</volume>
+  <value>311.39 B</value>
+ </content>
+ <content>
+  <code>GOTO</code>
+  <last>65</last>
+  <close>66</close>
+  <change>-1.00</change>
+  <pchange>-1.52</pchange>
+  <freq>29,048</freq>
+  <volume>4.71 B</volume>
+  <value>307.29 B</value>
+ </content>
+ <content>
+  <code>ASII</code>
+  <last>5,875</last>
+  <close>5,850</close>
+  <change>25.00</change>
+  <pchange>0.43</pchange>
+  <freq>9,744</freq>
+  <volume>29.18 M</volume>
+  <value>171.57 B</value>
+ </content>
+ <content>
+  <code>PGEO</code>
+  <last>1,395</last>
+  <close>1,295</close>
+  <change>100.00</change>
+  <pchange>7.72</pchange>
+  <freq>18,503</freq>
+  <volume>118.84 M</volume>
+  <value>162.16 B</value>
+ </content>
+ <content>
+  <code>CASA</code>
+  <last>595</last>
+  <close>600</close>
+  <change>-5.00</change>
+  <pchange>-0.83</pchange>
+  <freq>2,478</freq>
+  <volume>256.43 M</volume>
+  <value>151.42 B</value>
+ </content>
+ <content>
+  <code>TLKM</code>
+  <last>3,770</last>
+  <close>3,760</close>
+  <change>10.00</change>
+  <pchange>0.27</pchange>
+  <freq>6,996</freq>
+  <volume>37.48 M</volume>
+  <value>141.79 B</value>
+ </content>
+</mnc-securities>

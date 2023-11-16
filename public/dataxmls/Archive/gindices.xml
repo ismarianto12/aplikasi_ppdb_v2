@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mnc-securities>
+ <gindices>
+  <time>17 Oct 2023, 15:00</time>
+ </gindices>
+ <content>
+  <code>-AORD</code>
+  <name>All Ordinaries Australia</name>
+  <last>7,214.60</last>
+  <open>0.00</open>
+  <high>0.00</high>
+  <low>0.00</low>
+  <change>0.00</change>
+  <pchange>0.00</pchange>
+ </content>
+ <content>
+  <code>-ASXD</code>
+  <name>ASX200 AUSTRALIA</name>
+  <last>7,055.60</last>
+  <open>7,040.60</open>
+  <high>7,100.30</high>
+  <low>7,040.60</low>
+  <change>29.10</change>
+  <pchange>0.41</pchange>
+ </content>
+ <content>
+  <code>-ATX</code>
+  <name>ATX Vienna</name>
+  <last>3,291.38</last>
+  <open>3,321.34</open>
+  <high>3,347.37</high>
+  <low>3,290.44</low>
+  <change>-28.98</change>
+  <pchange>-0.87</pchange>
+ </content>
+ <content>
+  <code>-BSE30</code>
+  <name>BSE 30 Bombay</name>
+  <last>66,527.15</last>
+  <open>66,523.02</open>
+  <high>66,549.96</high>
+  <low>66,428.62</low>
+  <change>360.22</change>
+  <pchange>0.54</pchange>
+ </content>
+ <content>
+  <code>-BSET</code>
+  <name>Thailand Stock Exchange</name>
+  <last>1,439.56</last>
+  <open>1,431.83</open>
+  <high>1,440.32</high>
+  <low>1,429.18</low>
+  <change>12.45</change>
+  <pchange>0.87</pchange>
+ </content>
+ <content>
+  <code>-CAC40</code>
+  <name>CAC 40 Paris</name>
+  <last>7,048.23</last>
+  <open>0.00</open>
+  <high>7,048.94</high>
+  <low>7,016.10</low>
+  <change>26.04</change>
+  <pchange>0.37</pchange>
+ </content>
+ <content>
+  <code>-DJIA</code>
+  <name>Dow Jones Industrial Average</name>
+  <last>33,984.54</last>
+  <open>33,832.42</open>
+  <high>34,088.98</high>
+  <low>33,832.42</low>
+  <change>134.65</change>
+  <pchange>0.40</pchange>
+ </content>
+ <content>
+  <code>-EIDO</code>
+  <name>iShares MSCI Indonesia</name>
+  <last>24.80</last>
+  <open>24.92</open>
+  <high>24.92</high>
+  <low>24.71</low>
+  <change>0.05</change>
+  <pchange>0.20</pchange>
+ </content>
+ <content>
+  <code>-FTSE</code>
+  <name>FTSE 100 London</name>
+  <last>7,669.95</last>
+  <open>7,630.63</open>
+  <high>7,670.16</high>
+  <low>7,616.77</low>
+  <change>39.32</change>
+  <pchange>0.52</pchange>
+ </content>
+ <content>
+  <code>-GDAXI</code>
+  <name>DAX Xetra Frankfurt</name>
+  <last>15,285.91</last>
+  <open>15,211.29</open>
+  <high>15,287.13</high>
+  <low>15,209.65</low>
+  <change>47.92</change>
+  <pchange>0.31</pchange>
+ </content>
+ <content>
+  <code>-HSI</code>
+  <name>Hangseng Index</name>
+  <last>17,775.90</last>
+  <open>17,806.23</open>
+  <high>17,815.71</high>
+  <low>17,671.99</low>
+  <change>135.54</change>
+  <pchange>0.77</pchange>
+ </content>
+ <content>
+  <code>-KLSE</code>
+  <name>Kuala Lumpur Stock Exchange</name>
+  <last>1,443.11</last>
+  <open>1,442.36</open>
+  <high>1,443.55</high>
+  <low>1,438.95</low>
+  <change>4.15</change>
+  <pchange>0.29</pchange>
+ </content>
+ <content>
+  <code>-KOSPI</code>
+  <name>Korea Composite</name>
+  <last>2,460.17</last>
+  <open>2,454.14</open>
+  <high>2,466.87</high>
+  <low>2,449.42</low>
+  <change>23.93</change>
+  <pchange>0.98</pchange>
+ </content>
+ <content>
+  <code>-KOSPI200</code>
+  <name>Kospi200</name>
+  <last>329.20</last>
+  <open>327.15</open>
+  <high>329.65</high>
+  <low>326.45</low>
+  <change>4.35</change>
+  <pchange>1.34</pchange>
+ </content>
+ <content>
+  <code>-N225</code>
+  <name>Nikkei 225 Osaka</name>
+  <last>32,040.29</last>
+  <open>32,063.79</open>
+  <high>32,260.77</high>
+  <low>31,901.39</low>
+  <change>381.26</change>
+  <pchange>1.20</pchange>
+ </content>
+ <content>
+  <code>-NDXI</code>
+  <name>Nasdaq Composite</name>
+  <last>13,567.98</last>
+  <open>13,453.81</open>
+  <high>13,598.05</high>
+  <low>13,447.17</low>
+  <change>78.60</change>
+  <pchange>0.58</pchange>
+ </content>
+ <content>
+  <code>-NYSE</code>
+  <name>New York Stock Exchange</name>
+  <last>15,484.50</last>
+  <open>15,323.70</open>
+  <high>15,515.80</high>
+  <low>15,323.70</low>
+  <change>160.80</change>
+  <pchange>1.05</pchange>
+ </content>
+ <content>
+  <code>-NZX50</code>
+  <name>New Zealand Exchange 50</name>
+  <last>12,053.19</last>
+  <open>12,089.43</open>
+  <high>12,132.79</high>
+  <low>12,053.19</low>
+  <change>-36.24</change>
+  <pchange>-0.30</pchange>
+ </content>
+ <content>
+  <code>-PSE</code>
+  <name>Philippine Stock Exchange</name>
+  <last>6,198.83</last>
+  <open>0.00</open>
+  <high>0.00</high>
+  <low>0.00</low>
+  <change>0.00</change>
+  <pchange>0.00</pchange>
+ </content>
+ <content>
+  <code>-SHCI</code>
+  <name>Shanghai Composite</name>
+  <last>3,083.65</last>
+  <open>3,076.43</open>
+  <high>3,084.07</high>
+  <low>3,064.89</low>
+  <change>9.84</change>
+  <pchange>0.32</pchange>
+ </content>
+ <content>
+  <code>-SPX</code>
+  <name>S&amp;P 500</name>
+  <last>4,373.63</last>
+  <open>4,342.37</open>
+  <high>4,383.33</high>
+  <low>4,342.37</low>
+  <change>45.85</change>
+  <pchange>1.06</pchange>
+ </content>
+ <content>
+  <code>-STI</code>
+  <name>Straits Times Singapore</name>
+  <last>3,167.16</last>
+  <open>3,185.79</open>
+  <high>3,193.58</high>
+  <low>3,164.98</low>
+  <change>3.27</change>
+  <pchange>0.10</pchange>
+ </content>
+ <content>
+  <code>-STOXXE</code>
+  <name>STOXXE</name>
+  <last>435.15</last>
+  <open>437.18</open>
+  <high>438.59</high>
+  <low>434.04</low>
+  <change>-1.30</change>
+  <pchange>-0.30</pchange>
+ </content>
+ <content>
+  <code>-SZCI</code>
+  <name>Shenzhen Stock Exchange</name>
+  <last>1,884.20</last>
+  <open>1,886.16</open>
+  <high>1,886.81</high>
+  <low>1,873.79</low>
+  <change>-0.12</change>
+  <pchange>-0.01</pchange>
+ </content>
+ <content>
+  <code>-TLK</code>
+  <name>TLKM-NYSE</name>
+  <last>4,559.33</last>
+  <open>4,589.41</open>
+  <high>4,589.41</high>
+  <low>4,540.71</low>
+  <change>-17.19</change>
+  <pchange>-0.38</pchange>
+ </content>
+ <content>
+  <code>-TWSE</code>
+  <name>Taiwan Stock Exchage</name>
+  <last>16,642.55</last>
+  <open>16,678.28</open>
+  <high>16,770.64</high>
+  <low>16,618.30</low>
+  <change>-9.69</change>
+  <pchange>-0.06</pchange>
+ </content>
+ <content>
+  <code>COMPOSITE</code>
+  <name>IHSG, Indonesia</name>
+  <last>6,270.20</last>
+  <open>6,270.20</open>
+  <high>6,270.20</high>
+  <low>6,270.20</low>
+  <change>0.00</change>
+  <pchange>0.00</pchange>
+ </content>
+</mnc-securities>

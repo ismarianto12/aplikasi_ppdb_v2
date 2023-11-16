@@ -1,0 +1,3 @@
+mysqldump -u root -p darulmaza_siakad kelas > kelas.sql //asumsi table local tidak relevan table cpanel
+
+mysqldump -u root -p darulmaza_siakad pembayaran > pembayaran.sql //asumsi table local tidak relevan table cpanel

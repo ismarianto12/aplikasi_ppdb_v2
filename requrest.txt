@@ -1,0 +1,178 @@
++---------------------------------+
+| Tables_in_webmnc                |
++---------------------------------+
+| Appointment                     |
+| acctype                         |
+| album                           |
+| analyst                         |
+| analyst_sector                  |
+| bootcamp                        |
+| bootcamp_20211027               |
+| bootcamp_register               |
+| bootcamp_register20200625       |
+| bootcamp_register20200716       |
+| bootcamp_register_20211105      |
+| cabang                          |
+| cabang_20220301                 |
+| cabang_new                      |
+| catcompendium                   |
+| category                        |
+| category-old                    |
+| catfinancial                    |
+| city                            |
+| clinic                          |
+| clinic-20170512                 |
+| clinic_events                   |
+| clinic_list                     |
+| clinic_video                    |
+| comment                         |
+| compendium                      |
+| component                       |
+| component-old                   |
+| contact                         |
+| country                         |
+| cuandeals                       |
+| cuandeals_register              |
+| download                        |
+| download_category               |
+| download_log                    |
+| edu_events                      |
+| education                       |
+| edukasi_20200407                |
+| edukasi_202005                  |
+| edukasi_202006                  |
+| edukasi_new                     |
+| edukasi_offline                 |
+| edukasi_quota                   |
+| edukasi_quota_20200417          |
+| edukasi_quota_202005            |
+| edukasi_quota_20200520          |
+| edukasi_quota_202006            |
+| edukasi_quota_new               |
+| edukasi_quota_offline           |
+| edukasi_quota_test              |
+| edukasi_quotadev                |
+| edukasi_registrasi              |
+| edukasi_tipe                    |
+| edukasi_tipe_20200617           |
+| events                          |
+| financial                       |
+| galery                          |
+| gallery                         |
+| gathering_quota                 |
+| gathering_registration          |
+| gathering_registration_20200115 |
+| gathering_registration_20200201 |
+| gemesin                         |
+| halo_analis_appointment         |
+| halo_analis_upload              |
+| inspiration_register            |
+| jadwal                          |
+| kodepos                         |
+| kota                            |
+| log_audittrail                  |
+| map_cabang                      |
+| map_cabang_20200320             |
+| map_cabang_20200408             |
+| map_cabang_20220624             |
+| map_cabang_20220921             |
+| media                           |
+| menu                            |
+| menu_group                      |
+| mncchallenge                    |
+| mncchallenge_20220330           |
+| mncsyariahchallenge             |
+| mncsyariahchallenge_20220330    |
+| mncsyariahchallenge_20230509    |
+| modal                           |
+| negara                          |
+| numerator                       |
+| oa_kota                         |
+| oa_new                          |
+| oa_propinsi                     |
+| oauth                           |
+| opening                         |
+| opening_new                     |
+| opening_new_20180314            |
+| p_stock_market_20191115         |
+| p_stock_master_20191115         |
+| pages                           |
+| penghargaan                     |
+| post                            |
+| postcode                        |
+| promo                           |
+| propinsi                        |
+| province                        |
+| research                        |
+| research_20220621               |
+| research_20220818               |
+| research_date                   |
+| sales                           |
+| sector                          |
+| sector_20181128                 |
+| setting                         |
+| sinergi                         |
+| sinergi_data                    |
+| slider                          |
+| slider-old130616                |
+| spschedule                      |
+| spstandings                     |
+| spusers                         |
+| stock                           |
+| stockmonitoring                 |
+| stockmonitoring_register        |
+| subscribe                       |
+| syariah_quota                   |
+| syariah_registration            |
+| tag                             |
+| testimoni                       |
+| testimoni_edu                   |
+| theme                           |
+| traffic                         |
+| upload_opening                  |
+| upload_opening_new              |
+| user_cabang                     |
+| user_level                      |
+| user_role                       |
+| users                           |
+| users_20170504                  |
+| ussd                            |
+| video                           |
+| webreport_admin                 |
+| webreport_sql                   |
+| webreport_style                 |
+| webreports                      |
++---------------------------------+
+
+
+
+curl --location --request GET 'http://localhost/apibackend/public/api/v1/newgalery/?per_page=12&year=2021' \
+
+
+sudo cat /var/log/nginx/error.log
+
+ls -l /var/run/php-fpm.sock
+ls -ld /var/run/
+
+
+sudo chown nginx:nginx /var/run/php-fpm.sock
+sudo chmod 660 /var/run/php-fpm.sock
+
+
+listen = /var/run/php-fpm.sock
+
+sudo systemctl reload nginx
+sudo systemctl reload php-fpm
+
+
+
+  435  11/10/23 14:05:20 node -v
+  436  11/10/23 14:05:27 jslddd --version
+  437  11/10/23 14:05:34 su nvm install 16
+  438  11/10/23 14:05:35 nvm install 16
+  439  11/10/23 14:05:46 nvm use 16
+  440  11/10/23 14:05:53 nvm ls
+  441  11/10/23 14:06:03 node --version
+  442  11/10/23 14:06:09 nvm restart
+  443  11/10/23 14:06:12 ls
+  444  11/10/23 14:06:15 node -v
