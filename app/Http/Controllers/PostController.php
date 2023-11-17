@@ -49,13 +49,6 @@ class PostController extends Controller
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-
     public function createSeoUrl($string)
     {
         $string = strtolower($string); // Convert to lowercase
