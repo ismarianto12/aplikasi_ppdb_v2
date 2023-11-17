@@ -183,7 +183,7 @@ class PromosiController extends Controller
             } else {
                 $fdocument2 = $data->document2;
             }
-            $data->titleID = $this->request->titleID;
+            $data->titleId = $this->request->titleID;
             $data->titleEn = $this->request->titleEn;
             $data->deskripsiId = $this->request->deskripsiId;
             $data->deskripsiEn = $this->request->deskripsiEn;
