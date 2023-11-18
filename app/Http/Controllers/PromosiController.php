@@ -195,8 +195,8 @@ class PromosiController extends Controller
             $data->document1 = $focument1;
             $data->document2 = $fdocument2;
             $data->linkvideo = $this->request->linkvideo;
-            $data->created_at = $date; //Carbon::now()->format('Y-m-d h:i:s');
-            $data->updated_at = $date; // Carbon::now()->format('Y-m-d h:i:s');
+            $data->created_at = $date;
+            $data->updated_at = $date;
             $data->user_id = $this->request->user_id;
             $data->save();
 

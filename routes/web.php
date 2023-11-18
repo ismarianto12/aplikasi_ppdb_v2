@@ -207,7 +207,8 @@ Route::group(['middleware' => ['jwt.verify', 'cors']], function () {
             Route::post('create', [SiswaController::class, 'store']);
 
             Route::get('getBykelas/{id}', [SiswaController::class, 'getBykelas'])->name('getBykelas');
-            Route::get('edit/{id}', [SiswaController::class, 'show']);
+
+            Route::get('edit/{id}', [SiswaController::class, 'show'])->name('edit');
             Route::put('update/{id}', [SiswaController::class, 'update']);
             Route::delete('destroy/{id}', [SiswaController::class, 'destroy']);
         });

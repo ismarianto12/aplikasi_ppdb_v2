@@ -98,9 +98,26 @@ class PembayaranController extends Controller
 
     public function update(Request $request, $id)
     {
-        $pembayaran = Pembayaran::find($id);
-        $pembayaran->update($request->all());
-        return response()->json($pembayaran);
+        try {
+            $data = [
+                'siswa_id' => $this->request->id_siswa,
+                'jumlah_bayar' => $this->request->jumlah_bayar,
+                'pembayaran_type' => $this->request->type_pembayaran,
+            ];
+
+            $pembayaran = Pembayaran::where('tagihan_id', $this->request->jenis_tagihan)->first();
+
+            if (!$pembayaran) {
+                return response()->json(['msg' => 'Data data transaksi belum di posting silahkan posting terlebih dahulu.'], 404);
+            }
+            $pembayaran->update($data);
+            return response()->json($pembayaran);
+        } catch (\Exception $th) {
+            return response()->json([
+                'msg' => 'Gagal menyimpan data.',
+                'error' => $th->getMessage(),
+            ], 500);
+        }
     }
 
     public function destroy($id)
