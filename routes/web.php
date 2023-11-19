@@ -23,6 +23,8 @@ use App\Http\Controllers\TahunAkademikController;
 use App\Http\Controllers\UserLevelController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\VideoController;
+use App\Http\Controllers\MapelController;
+
 use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware' => ['cors']], function () {
@@ -201,6 +203,14 @@ Route::group(['middleware' => ['jwt.verify', 'cors']], function () {
             Route::post('update/{id}', [PpdbController::class, 'update'])->name('update');
             Route::post('siswadetail/{id}', [PpdbController::class, 'siswadetail'])->name('siswadetail');
             Route::post('report/{id}', [PpdbController::class, 'Report'])->name('report');
+        });
+        Route::prefix('mapel')->group(function () {
+            Route::get('list', [MapelController::class, 'index'])->name('list');
+            Route::get('detail', [MapelController::class, 'verifikasibayar'])->name('edit');
+            Route::post('edit/{id}', [MapelController::class, 'insertsiswa'])->name('edit');
+            Route::post('update/{id}', [MapelController::class, 'update'])->name('update');
+            Route::post('insert', [MapelController::class, 'store'])->name('insert');
+            Route::post('delete/{id}', [MapelController::class, 'Report'])->name('delete');
         });
         Route::prefix('siswa')->group(function () {
             Route::get('list', [SiswaController::class, 'index'])->name('list');
