@@ -7,6 +7,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\Logincontroller;
+use App\Http\Controllers\MapelController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ParameterBiayarController;
 use App\Http\Controllers\PembayaranController;
@@ -23,8 +24,6 @@ use App\Http\Controllers\TahunAkademikController;
 use App\Http\Controllers\UserLevelController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\VideoController;
-use App\Http\Controllers\MapelController;
-
 use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware' => ['cors']], function () {
@@ -66,7 +65,6 @@ Route::group(['middleware' => ['cors']], function () {
 });
 
 Route::group(['middleware' => ['jwt.verify', 'cors']], function () {
-
     Route::prefix('api/v1')->group(function () {
         Route::prefix('artikel')->group(function () {
             Route::post('list', [PostController::class, 'index'])->name('list');
@@ -217,9 +215,8 @@ Route::group(['middleware' => ['jwt.verify', 'cors']], function () {
             Route::post('create', [SiswaController::class, 'store']);
 
             Route::get('getBykelas/{id}', [SiswaController::class, 'getBykelas'])->name('getBykelas');
-
             Route::get('edit/{id}', [SiswaController::class, 'show'])->name('edit');
-            Route::put('update/{id}', [SiswaController::class, 'update']);
+            Route::post('update/{id}', [SiswaController::class, 'update'])->name('update');
             Route::delete('destroy/{id}', [SiswaController::class, 'destroy']);
         });
         Route::prefix('tahunakademik')->group(function () {
