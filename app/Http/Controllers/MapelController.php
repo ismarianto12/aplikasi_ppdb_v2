@@ -18,10 +18,15 @@ class MapelController extends Controller
             'kelas.kelas',
             'mapel.kode',
             'mapel.nama_mapel',
-            'tingkat.tingkat'
+            'tingkat.tingkat',
+            'users.nama_lengkap',
+            'users.username',
+            'mapel.created_at',
+            'mapel.updated_at',
         )->join('kelas', 'kelas.id', '=', 'mapel.kelas_id', 'left')
-            ->join('tingkat', 'mapel.unit_id', '=', 'tingkat.id', 'left')->get();
-
+            ->join('users', 'users.id', '=', 'mapel.user_id', 'left')
+            ->join('tingkat', 'mapel.unit_id', '=', 'tingkat.id', 'left')
+            ->get();
         return response()->json($data);
     }
 
@@ -45,8 +50,8 @@ class MapelController extends Controller
         $data = new mapel;
         $data->unit_id = $this->request->tingkat;
         $data->kelas_id = $this->request->kelas;
-        $data->kode = $this->request->kode;
-        $data->nama_mapel = $this->request->nama_mapel;
+        $data->kode = $this->request->kode_mapel;
+        $data->nama_mapel = $this->request->nama;
         $data->created_at = date('Y-m-d');
         $data->updated_at = date('Y-m-d');
         $data->save();
@@ -91,8 +96,9 @@ class MapelController extends Controller
             $data = mapel::find($id);
             $data->unit_id = $this->request->unit_id;
             $data->kelas_id = $this->request->kelas_id;
-            $data->kode = $this->request->kode;
-            $data->nama_mapel = $this->request->nama_mapel;
+            $data->kode = $this->request->kode_mapel;
+            $data->nama_mapel = $this->request->nama;
+
             $data->created_at = date('Y-m-d');
             $data->updated_at = date('Y-m-d');
 
