@@ -14,7 +14,6 @@ class SiswaController extends Controller
     }
     public function index()
     {
-        // Mengambil daftar siswa
         $siswa = Siswa::all();
         return response()->json($siswa);
     }

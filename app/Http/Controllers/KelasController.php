@@ -55,7 +55,22 @@ class KelasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        try {
+            $data = new kelas;
+            $data->kelas = $request->kelas;
+            $data->tingkat = $request->unit;
+            $data->save();
+            return response()->json([
+                'messages' => 'data berhasil disimpan .',
+            ]);
+
+        } catch (\Throwable $th) {
+            return response()->json([
+                'status' => $th->getMessage(),
+            ]);
+        }
+
     }
 
     /**
@@ -82,7 +97,7 @@ class KelasController extends Controller
     }
     public function getbyUnit($id)
     {
-        $data = Kelas::where('tingkat',$id)->get();
+        $data = Kelas::where('tingkat', $id)->get();
         return response()->json($data);
     }
     public function update($id)
@@ -92,8 +107,7 @@ class KelasController extends Controller
             $kelas->kelas = $this->request->kelas;
             $kelas->tingkat = $this->request->tingkat;
             $kelas->save();
-        } catch (\Throwable $th) {
-            //throw $th;
+        } catch (\Kelas $th) {
             return response()->json([
                 'messages' => $th->getMessage(),
             ]);

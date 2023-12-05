@@ -14,7 +14,8 @@ class TingkatController extends Controller
      */
     public function index()
     {
-        //
+        $data = tingkat::get();
+        return response()->json($data);
     }
 
     /**

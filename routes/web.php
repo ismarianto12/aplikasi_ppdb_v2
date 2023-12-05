@@ -21,6 +21,7 @@ use App\Http\Controllers\StatistikController;
 use App\Http\Controllers\StrukturController;
 use App\Http\Controllers\TagsController;
 use App\Http\Controllers\TahunAkademikController;
+use App\Http\Controllers\TingkatController;
 use App\Http\Controllers\UserLevelController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\VideoController;
@@ -237,7 +238,7 @@ Route::group(['middleware' => ['jwt.verify', 'cors']], function () {
         });
 
         Route::prefix('tingkat')->group(function () {
-            Route::get('list', [ParameterBiayarController::class, 'index'])->name('list');
+            Route::get('list', [TingkatController::class, 'index'])->name('list');
             Route::post('insert', [ParameterBiayarController::class, 'store'])->name('insert');
             Route::get('edit/{id}', [ParameterBiayarController::class, 'edit'])->name('edit');
             Route::post('update/{id}', [ParameterBiayarController::class, 'update'])->name('update');
