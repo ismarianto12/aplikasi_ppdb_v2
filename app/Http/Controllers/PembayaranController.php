@@ -17,7 +17,7 @@ class PembayaranController extends Controller
     public function index()
     {
         $periode = $this->request->periode;
-        $kelas = $this->request->kelas;
+        $kelas = $this->request->class_name;
         $unit = $this->request->unit;
 
         $data = Siswa::select(
@@ -104,12 +104,10 @@ class PembayaranController extends Controller
                 'jumlah_bayar' => $this->request->jumlah_bayar,
                 'pembayaran_type' => $this->request->type_pembayaran,
             ];
-
-            $pembayaran = Pembayaran::where('tagihan_id', $this->request->jenis_tagihan)->first();
-
-            if (!$pembayaran) {
-                return response()->json(['msg' => 'Data data transaksi belum di posting silahkan posting terlebih dahulu.'], 404);
-            }
+            $pembayaran = Pembayaran::where('tagihan_id', $this->request->jenis_tagihan);
+            // if (!$pembayaran) {
+            //     return response()->json(['msg' => 'Data data transaksi belum di posting silahkan posting terlebih dahulu.'], 404);
+            // }
             $pembayaran->update($data);
             return response()->json($pembayaran);
         } catch (\Exception $th) {

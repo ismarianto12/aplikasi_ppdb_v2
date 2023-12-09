@@ -264,7 +264,9 @@ Route::group(['middleware' => ['jwt.verify', 'cors']], function () {
         });
 
         Route::prefix('pembayaran')->group(function () {
-            Route::get('list', [PembayaranController::class, 'index'])->name('list');
+            // get jenis tagihan
+            Route::get('getJenistagihan',[ParameterBiayarController::class,'getJenistagihan'])->name('getJenisTagihan');
+            Route::post('list', [PembayaranController::class, 'index'])->name('list');
             Route::post('terbitkanPembayaran', [PembayaranController::class, 'terbitkanPembayaran'])->name('terbitkanPembayaran');
             Route::post('insert', [PembayaranController::class, 'store'])->name('insert');
             Route::get('edit/{id}', [PembayaranController::class, 'edit'])->name('edit');

@@ -111,8 +111,8 @@ class ParameterBiayarController extends Controller
     public function destroy($id)
     {
         try {
-           parameterBiayar::find($id)->delete();
-             return response()->json([
+            parameterBiayar::find($id)->delete();
+            return response()->json([
                 'data berhasil dihapus',
             ]);
         } catch (parameterBiayar $th) {
@@ -121,4 +121,11 @@ class ParameterBiayarController extends Controller
             ], 400);
         }
     }
+    public function getJenistagihan()
+    {
+        $unit_id = $this->request->unit_id;
+        $data = parameterBiayar::where('tingkat', $unit_id)->get();
+        return response()->json($data);
+    }
+
 }
