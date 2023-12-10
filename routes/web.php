@@ -1,4 +1,5 @@
 <?php
+use App\Http\Controllers\AbsensiController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DivisiController;
 use App\Http\Controllers\DownloadController;
@@ -48,6 +49,8 @@ Route::group(['middleware' => ['cors']], function () {
         Route::get('currency', [HomeController::class, 'currency'])->name('currency');
         Route::post('loginppdb', [PpdbController::class, 'login'])->name('login');
         Route::post('verify', [PpdbController::class, 'getDataFromToken'])->name('login');
+
+        Route::post('artikel', [HomeController::class, 'filterPosts'])->name('artikel');
 
         Route::get('ppdb_nomor', [PpdbController::class, 'generateUniquePpdbNumber'])->name('ppdb_nomor');
         Route::post('ppdb', [PpdbController::class, 'create'])->name('ppdb');
@@ -237,6 +240,16 @@ Route::group(['middleware' => ['jwt.verify', 'cors']], function () {
             Route::delete('destroy/{id}', [ParameterBiayarController::class, 'destroy'])->name('destroy');
         });
 
+        Route::prefix('absensi')->group(function () {
+            Route::get('list', [AbsensiController::class, 'index'])->name('list');
+            Route::post('insert', [ParameterBiayarController::class, 'store'])->name('insert');
+            Route::get('edit/{id}', [ParameterBiayarController::class, 'edit'])->name('edit');
+            Route::post('update/{id}', [ParameterBiayarController::class, 'update'])->name('update');
+            Route::delete('destroy/{id}', [ParameterBiayarController::class, 'destroy'])->name('destroy');
+        });
+
+        // Route::preg
+
         Route::prefix('tingkat')->group(function () {
             Route::get('list', [TingkatController::class, 'index'])->name('list');
             Route::post('insert', [ParameterBiayarController::class, 'store'])->name('insert');
@@ -265,7 +278,7 @@ Route::group(['middleware' => ['jwt.verify', 'cors']], function () {
 
         Route::prefix('pembayaran')->group(function () {
             // get jenis tagihan
-            Route::get('getJenistagihan',[ParameterBiayarController::class,'getJenistagihan'])->name('getJenisTagihan');
+            Route::get('getJenistagihan', [ParameterBiayarController::class, 'getJenistagihan'])->name('getJenisTagihan');
             Route::post('list', [PembayaranController::class, 'index'])->name('list');
             Route::post('terbitkanPembayaran', [PembayaranController::class, 'terbitkanPembayaran'])->name('terbitkanPembayaran');
             Route::post('insert', [PembayaranController::class, 'store'])->name('insert');
