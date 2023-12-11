@@ -59,7 +59,9 @@ class AbsensiController extends Controller
             'siswa.ppdb_id',
             'kelas.kelas',
             'kelas.tingkat',
+
         )
+
 
             ->join('kelas', 'kelas.id', '=', 'siswa.kelas_id', 'left')
             ->join('tingkat', 'tingkat.id', '=', 'siswa.tingkat_id', 'left');
