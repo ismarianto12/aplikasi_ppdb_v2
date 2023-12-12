@@ -233,11 +233,11 @@ Route::group(['middleware' => ['jwt.verify', 'cors']], function () {
         });
 
         Route::prefix('parameterbiaya')->group(function () {
-            Route::get('list', [ParameterBiayarController::class, 'index'])->name('list');
+            Route::post('list', [ParameterBiayarController::class, 'index'])->name('list');
             Route::post('insert', [ParameterBiayarController::class, 'store'])->name('insert');
             Route::get('edit/{id}', [ParameterBiayarController::class, 'edit'])->name('edit');
             Route::post('update/{id}', [ParameterBiayarController::class, 'update'])->name('update');
-            Route::delete('destroy/{id}', [ParameterBiayarController::class, 'destroy'])->name('destroy');
+            Route::post('destroy/{id}', [ParameterBiayarController::class, 'destroy'])->name('destroy');
         });
 
         Route::prefix('absensi')->group(function () {

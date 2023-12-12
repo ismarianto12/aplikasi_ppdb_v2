@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\kelas;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class KelasController extends Controller
 {
@@ -97,8 +98,10 @@ class KelasController extends Controller
     }
     public function getbyUnit($id)
     {
-        $data = Kelas::where('tingkat', $id)->get();
-        return response()->json($data);
+        $data = DB::table('kelas')
+            ->where(DB::raw("tingkat = '$id'"))
+            ->first();
+        return response()->json([$data]);
     }
     public function update($id)
     {

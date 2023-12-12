@@ -13,7 +13,10 @@ class MapelController extends Controller
     }
     public function index()
     {
-        $data = mapel::select(
+        $unit_id = $this->request->unit_id;
+        $kelas_id = $this->request->kelas_id;
+
+        $query = mapel::select(
             'mapel.id',
             'kelas.kelas',
             'mapel.kode',
@@ -23,11 +26,23 @@ class MapelController extends Controller
             'users.username',
             'mapel.created_at',
             'mapel.updated_at',
-        )->join('kelas', 'kelas.id', '=', 'mapel.kelas_id', 'left')
-            ->join('users', 'users.id', '=', 'mapel.user_id', 'left')
-            ->join('tingkat', 'mapel.unit_id', '=', 'tingkat.id', 'left')
-            ->get();
-        return response()->json($data);
+        )->leftJoin('kelas', 'kelas.id', '=', 'mapel.kelas_id')
+            ->leftJoin('users', 'users.id', '=', 'mapel.user_id')
+            ->leftJoin('tingkat', 'mapel.unit_id', '=', 'tingkat.id');
+
+        if ($unit_id) {
+            $query->where('kelas.id', $kelas_id);
+        }
+
+        if ($kelas_id) {
+            $query->where('tingkat.id', $kelas_id);
+        }
+
+        $perPage = $this->request->input('per_page', 10); // You can customize the number of items per page
+        $currentPage = $this->request->input('page', 1);
+        $result = $query->paginate($perPage);
+
+        return response()->json($result);
     }
 
     /**

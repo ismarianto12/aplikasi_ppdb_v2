@@ -113,7 +113,7 @@ class ParameterBiayarController extends Controller
         try {
             parameterBiayar::find($id)->delete();
             return response()->json([
-                'data berhasil dihapus',
+                'msg' => 'data berhasil dihapus',
             ]);
         } catch (parameterBiayar $th) {
             return response()->json([
