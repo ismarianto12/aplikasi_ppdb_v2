@@ -98,10 +98,14 @@ class KelasController extends Controller
     }
     public function getbyUnit($id)
     {
-        $data = DB::table('kelas')
-            ->where(DB::raw("tingkat = '$id'"))
-            ->first();
-        return response()->json([$data]);
+
+        $result = DB::table('kelas as k')
+            ->select('k.id','k.kelas', 'k.kode_kelas','t.tingkat')
+            ->join('tingkat as t', 't.id', '=', 'k.tingkat')
+            ->where('t.id', '=', $id)
+            ->get();
+
+        return response()->json($result);
     }
     public function update($id)
     {

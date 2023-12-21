@@ -12,6 +12,19 @@ use Validator;
 
 class HomeController extends Controller
 {
+
+    public function Statistik()
+    {
+        switch ($action) {
+            case 'siswa':
+                break;
+
+            default:
+            return response()->json(0);
+                break;
+        }
+    }
+
     public function index()
     {
         return response()->json(['api' => 'v1']);

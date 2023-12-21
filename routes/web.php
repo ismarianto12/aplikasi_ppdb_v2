@@ -11,6 +11,7 @@ use App\Http\Controllers\Logincontroller;
 use App\Http\Controllers\MapelController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ParameterBiayarController;
+use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\PembayaranController;
 use App\Http\Controllers\PenghargaanController;
 use App\Http\Controllers\PostController;
@@ -56,7 +57,7 @@ Route::group(['middleware' => ['cors']], function () {
         Route::post('ppdb', [PpdbController::class, 'create'])->name('ppdb');
 
         // paramter boaya dan lain lain
-        Route::post('parameter', [HomeController::class, 'parameterbiaya'])->name('parameterbiaya');
+        Route::post('parameterbiaya', [HomeController::class, 'parameterbiaya'])->name('parameterbiaya');
         Route::group(['middleware' => ['cors', 'ppdb.auth']], function () {
             Route::post('detailppdb/{id}', [PpdbController::class, 'show'])->name('ppdb');
 
@@ -93,6 +94,15 @@ Route::group(['middleware' => ['jwt.verify', 'cors']], function () {
             Route::post('update/{id}', [PagesController::class, 'update'])->name('update');
             Route::delete('destroy', [PagesController::class, 'destroy'])->name('destroy');
         });
+
+        Route::prefix('karyawan')->group(function () {
+            Route::get('list', [PegawaiController::class, 'index'])->name('list');
+            Route::post('insert', [PegawaiController::class, 'store'])->name('insert');
+            Route::get('detail/{id}', [PegawaiController::class, 'edit'])->name('detail');
+            Route::post('update/{id}', [PegawaiController::class, 'update'])->name('update');
+            Route::delete('destroy', [PegawaiController::class, 'destroy'])->name('destroy');
+        });
+
         Route::prefix('struktur')->group(function () {
             Route::get('list', [StrukturController::class, 'index'])->name('list');
             Route::post('insert', [StrukturController::class, 'store'])->name('insert');
@@ -296,6 +306,8 @@ Route::group(['middleware' => ['jwt.verify', 'cors']], function () {
 
         Route::prefix('laporan')->group(function () {
             Route::get('ppdb', [PpdbController::class, 'reportpdb'])->name('ppdb');
+            Route::get('pembayaran', [PembayaranController::class, 'LaporanPembayaran'])->name('pembayaran');
+
         });
 
     });

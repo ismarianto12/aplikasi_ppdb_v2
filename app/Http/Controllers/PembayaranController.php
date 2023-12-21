@@ -14,6 +14,8 @@ class PembayaranController extends Controller
     {
         $this->request = $request;
     }
+
+
     public function index()
     {
         $periode = $this->request->periode;
@@ -100,15 +102,16 @@ class PembayaranController extends Controller
     {
         try {
             $data = [
-                'siswa_id' => $this->request->id_siswa,
-                'jumlah_bayar' => $this->request->jumlah_bayar,
-                'pembayaran_type' => $this->request->type_pembayaran,
+                'siswa_id' => $request->id_siswa,
+                'unit_id'=>$request->unit_id ? $request->unit_id : 1,
+                'kelas_id'=>$request->unit_id ? $request->unit_id : 1,
+                'jumlah_bayar' => $request->jumlah_bayar,
+                'pembayaran_type' => $request->type_pembayaran,
+                'pembayaran_method' => $request->type_pembayaran,
+                'pembayaran_date'=> date('Y-m-d H:i:s')
             ];
-            $pembayaran = Pembayaran::where('tagihan_id', $this->request->jenis_tagihan);
-            // if (!$pembayaran) {
-            //     return response()->json(['msg' => 'Data data transaksi belum di posting silahkan posting terlebih dahulu.'], 404);
-            // }
-            $pembayaran->update($data);
+            $pembayaran = Pembayaran::create($data);
+
             return response()->json($pembayaran);
         } catch (\Exception $th) {
             return response()->json([
@@ -118,9 +121,64 @@ class PembayaranController extends Controller
         }
     }
 
+
     public function destroy($id)
     {
         Pembayaran::destroy($id);
         return response()->json(['message' => 'Data pembayaran berhasil dihapus']);
     }
+
+    public function LaporanPembayaran()
+    {
+        $dari = $this->request->dari;
+        $sampai = $this->request->sampai;
+        $tingkat = $this->request->tingkat;
+        $jenjang = $this->request->jenjang;
+        $perPage = $this->request->page ? $this->request->page : 1;
+
+        // if ($tingkat == '' && $jenjang == '') {
+        //     return response()->json([
+        //         'messsages' => 'tingkat field is required',
+        //     ]);
+        // }
+
+        $query = Pembayaran::select(
+            'pembayaran.id',
+            'pembayaran.unit_id',
+            'pembayaran.kelas_id',
+            'pembayaran.siswa_id',
+            'pembayaran.tagihan_id',
+            'pembayaran.created_at',
+            'pembayaran.updated_at',
+            'pembayaran.user_id',
+            'pembayaran.periode_bayar',
+            'pembayaran.tahun_ajaran',
+            'pembayaran.tanggal_jatuh_tempo',
+            'pembayaran.pembayaran_method',
+            'pembayaran.pembayaran_channel',
+            'pembayaran.pembayaran_note',
+            'pembayaran.pembayaran_date',
+            'pembayaran.bayar_sebagai',
+            'pembayaran.jumlah_bayar',
+            'pembayaran.pembayaran_type'
+        )->join('divisi', 'divisi.id', '=', 'pembayaran.unit_id', 'left')
+            ->join('kelas', 'kelas.id', '=', 'pembayaran.kelas_id', 'left');
+
+        if ($dari && $sampai) {
+            $query->whereBetween('pembayaran.created_at', [
+                $dari, $sampai,
+            ]);
+        }
+
+        if ($tingkat && $jenjang) {
+            $query->where('kelas.id', $tingkat);
+            $query->where('pembayaran.unit_id', $jenjang);
+
+        }
+
+        $posts = $query->paginate(7, ['*'], 'page', $perPage);
+        return response()->json(['data' => $posts]);
+
+    }
+
 }
